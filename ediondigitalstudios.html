@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Edion Digital Studios is a professional modern tech company that helps businesses grow online.">
+  <meta name="author" content="Edmond Emma Etot">
+  <meta property="og:title" content="Edion Digital Studios">
+  <meta property="og:description"
+    content="Professional web solutions built for growth. Modern, fast and responsive websites.">
+  <meta property="og:type" content="website">
+  <title>Edion Digital Studios</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #040e31;
+      --bg-soft: #0c1020;
+      --primary: #6366f1;
+      --accent: #06b6d4;
+      --text: #f8fafc;
+      --muted: #9ca3af;
+      --card: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Manrope', Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(99, 102, 241, 0.25), transparent),
+        radial-gradient(800px 400px at 10% 10%, rgba(6, 182, 212, 0.2), transparent),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 9, 15, 0.6);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      max-width: 1280px;
+      margin: auto;
+      padding: 1.4rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    nav li {
+      padding: 14px 16px;
+    }
+
+    nav li:hover {
+      color: white;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .hero {
+      min-height: 70vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 10rem 2rem 6rem;
+    }
+
+    .hero h2 {
+      font-weight: 800;
+      line-height: 1.05;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .cta {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background-color: var(--card);
+      border-radius: 999px;
+      font-weight: 700;
+      padding: 1rem 2.4rem;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #020617;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .trust {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      max-width: 1280px;
+      margin: auto;
+      padding: 8rem 2rem;
+    }
+
+    section h3 {
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 4rem;
+      font-weight: 800;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .service {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      border: 1px solid var(--border);
+      border-radius: 1.8rem;
+      padding: 3rem;
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-10px);
+    }
+
+    .service h4 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .service p {
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+      text-align: center;
+    }
+
+    .stat h5 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat p {
+      color: var(--muted);
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      display: grid;
+      gap: 1.3rem;
+    }
+
+    input,
+    textarea {
+      padding: 1.1rem 1.3rem;
+      border-radius: 1rem;
+      outline: none;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+    }
+
+    textarea {
+      height: 150px;
+      resize: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(7, 9, 15, 0.95);
+        backdrop-filter: blur(18px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 4rem;
+        transition: left 0.3s ease;
+      }
+
+      nav ul.active {
+        left: 0;
+      }
+
+      nav li {
+        padding: 1.5rem;
+        font-size: 1.2rem;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .hero {
+        padding: 8rem 1rem 4rem;
+      }
+
+      section {
+        padding: 6rem 1rem;
+      }
+
+      section h3 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1>Edion Digital Studios</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Premium <span class="gradient">Web Experiences</span><br>for modern brands</h2>
+    <p>We help businesses and individuals stand out online through high-end designs, performance, and clean
+      developments.</p>
+    <div class="cta">
+      <a href="#contact" class="btn primary">Start a Project</a>
+      <a href="#services" class="btn">View Services</a>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div>⚡ Fast & Optimized</div>
+    <div>💎 Premium Design</div>
+    <div>📱 Fully Responsive</div>
+    <div>🔒 Secure & Reliable</div>
+  </div>
+
+  <section id="services">
+    <h3>What We Do!</h3>
+    <div class="services">
+      <div class="service">
+        <h4>Web Design</h4>
+        <p>High-end UI/UX design tailored to your brand and audience.</p>
+      </div>
+      <div class="service">
+        <h4>Web Development</h4>
+        <p>Modern, scalable and responsive websites built to perform.</p>
+      </div>
+      <div class="service">
+        <h4>Brand Websites</h4>
+        <p>Professional online presence that builds trust and converts.</p>
+      </div>
+      <div class="service">
+        <h4>And Many More</h4>
+        <p>Anything you like, we are here for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <h3>Impact</h3>
+    <div class="stats">
+      <div class="stat">
+        <h5>50+</h5>
+        <p>Projects Delivered</p>
+      </div>
+      <div class="stat">
+        <h5>99%</h5>
+        <p>Client Satisfaction</p>
+      </div>
+      <div class="stat">
+        <h5>5★</h5>
+        <p>Client Ratings</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Let's Build Something Great For You!</h3>
+    <form action="https://formspree.io/f/mgoelykg" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Tell us about your project" required></textarea>
+      <button type="submit" class="btn primary">Send Message</button>
+    </form>
+  </section>
+
+  <footer>&copy; 2026 Edion Digital Studios</footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navUl = document.querySelector('nav ul');
+    const icon = hamburger.querySelector('i');
+
+    hamburger.addEventListener('click', () => {
+      navUl.classList.toggle('active');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        navUl.classList.remove('active');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+      });
+    });
+  </script>
+</body>
+
+</html>
